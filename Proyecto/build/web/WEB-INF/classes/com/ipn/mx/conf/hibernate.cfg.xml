@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+  <session-factory>
+    <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+    <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+    <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/proyecto</property>
+    <property name="hibernate.connection.username">root</property>
+    <property name="hibernate.connection.password">root</property>
+    <property name="hibernate.current_session_context_class">thread</property>
+    <mapping class="com.ipn.mx.clases.Salahorario"/>
+    <mapping class="com.ipn.mx.clases.Sucursal"/>
+    <mapping class="com.ipn.mx.clases.Tiposala"/>
+    <mapping class="com.ipn.mx.clases.Categoria"/>
+    <mapping class="com.ipn.mx.clases.Horario"/>
+    <mapping class="com.ipn.mx.clases.Tipousuario"/>
+    <mapping class="com.ipn.mx.clases.Asiento"/>
+    <mapping class="com.ipn.mx.clases.Delegacionmunicipio"/>
+    <mapping class="com.ipn.mx.clases.Entidadfederativa"/>
+    <mapping class="com.ipn.mx.clases.Genero"/>
+    <mapping class="com.ipn.mx.clases.Sala"/>
+    <mapping class="com.ipn.mx.clases.Usuario"/>
+    <mapping class="com.ipn.mx.clases.Pelicula"/>
+    <mapping class="com.ipn.mx.clases.Articulo"/>
+  </session-factory>
+</hibernate-configuration>

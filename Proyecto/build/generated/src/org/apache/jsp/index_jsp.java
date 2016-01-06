@@ -1,10 +1,10 @@
-package org.apache.jsp.DirectorGeneral;
+package org.apache.jsp;
 
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.jsp.*;
 
-public final class inicioD_jsp extends org.apache.jasper.runtime.HttpJspBase
+public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
     implements org.apache.jasper.runtime.JspSourceDependent {
 
   private static final JspFactory _jspxFactory = JspFactory.getDefaultFactory();
@@ -47,19 +47,19 @@ public final class inicioD_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("<!DOCTYPE html>\n");
       out.write("<html>\n");
       out.write("    <head>\n");
-      out.write("        <title>Principal</title>\n");
-      out.write("        <link href=\"../css/bootstrap.css\" rel='stylesheet' type='text/css' />\n");
+      out.write("        <title>Proyecto Final</title>\n");
+      out.write("        <link href=\"css/bootstrap.css\" rel='stylesheet' type='text/css' />\n");
       out.write("        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->\n");
-      out.write("        <script src=\"../js/jquery.min.js\"></script>\n");
+      out.write("        <script src=\"js/jquery.min.js\"></script>\n");
       out.write("        <!-- Custom Theme files -->\n");
-      out.write("        <link href=\"../css/style.css\" rel='stylesheet' type='text/css' />\n");
+      out.write("        <link href=\"css/style.css\" rel='stylesheet' type='text/css' />\n");
       out.write("        <!-- Custom Theme files -->\n");
       out.write("        <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n");
       out.write("        <script type=\"application/x-javascript\"> addEventListener(\"load\", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>\n");
       out.write("    </script>\n");
       out.write("    <!---- start-smoth-scrolling---->\n");
-      out.write("    <script type=\"text/javascript\" src=\"../js/move-top.js\"></script>\n");
-      out.write("    <script type=\"text/javascript\" src=\"../js/easing.js\"></script>\n");
+      out.write("    <script type=\"text/javascript\" src=\"js/move-top.js\"></script>\n");
+      out.write("    <script type=\"text/javascript\" src=\"js/easing.js\"></script>\n");
       out.write("\n");
       out.write("    <script type=\"text/javascript\">\n");
       out.write("            jQuery(document).ready(function($) {\n");
@@ -112,19 +112,6 @@ public final class inicioD_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("                    <h1>PAPIYON</h1>\n");
       out.write("                </div>\n");
       out.write("                <!----start-top-nav---->\n");
-      out.write("                <!----start-top-nav---->\n");
-      out.write("                <nav class=\"top-nav\">\n");
-      out.write("                    <ul class=\"top-nav\">\n");
-      out.write("                        <li class=\"active\"><a href=\"#home\" class=\"scroll\">Inicio</a></li>\n");
-      out.write("                        <li><a href=\"#about\" class=\"scroll\">Sucursales</a></li>\n");
-      out.write("                        <li><a href=\"#services\" class=\"scroll\">Managers</a></li>\n");
-      out.write("                        <li><a href=\"#portfolio\" class=\"scroll\">Reportes</a></li>\n");
-      out.write("                        <li><a href=\"#contact\" class=\"scroll\">Gráficas</a></li>\n");
-      out.write("                        <li><a href=\"#contact\" class=\"scroll\">Configuración</a></li>\n");
-      out.write("                        <li><a href=\"#contact\" class=\"scroll\">Cerrar sesión</a></li>\n");
-      out.write("                    </ul>\n");
-      out.write("                    <a href=\"#\" id=\"pull\"><img src=\"images/menu-icon.png\" title=\"menu\" /></a>\n");
-      out.write("                </nav>\n");
       out.write("                <div class=\"clearfix\"> </div>\n");
       out.write("            </div>\n");
       out.write("        </div>\n");
@@ -133,19 +120,20 @@ public final class inicioD_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("    \n");
       out.write("    <div class=\"Themes\">\n");
       out.write("        <div class=\"container\">\n");
-      out.write("            <div class=\"feature-grids\">\n");
-      out.write("                <div class=\"col-md-4 feature-grid\">\n");
-      out.write("                    <h3><span class=\"fea-icon1\"> </span>Correo:</h3>\n");
-      out.write("                    <p><input type=\"text\" name=\"txtCorreo\" required/></p>\n");
-      out.write("                </div>\n");
-      out.write("                <div class=\"col-md-4 feature-grid\">\n");
-      out.write("                    <h3><span class=\"fea-icon1\"> </span>Contraseña:</h3>\n");
-      out.write("                    <p><input type=\"password\" name=\"txtContrasena\" required/></p>\n");
-      out.write("                </div>\n");
-      out.write("\n");
-      out.write("                <div class=\"col-md-4 feature-grid\">\n");
-      out.write("                    <div class=\"button\"><span><a href=\"#\">Read More</a></span></div>\n");
-      out.write("                </div>\n");
+      out.write("            <div class=\"feature-grids\" style=\"align-items: center; justify-content: center; display: flex\">\n");
+      out.write("                <form method=\"post\" action=\"InicioSesionServlet\">\n");
+      out.write("                    <div class=\"feature-grid\">\n");
+      out.write("                        <h3><span class=\"fea-icon1\"> </span>Correo:</h3>\n");
+      out.write("                        <p><input type=\"text\" name=\"txtCorreo\" required/></p>\n");
+      out.write("                    </div><br>\n");
+      out.write("                    <div class=\"feature-grid\">\n");
+      out.write("                        <h3><span class=\"fea-icon1\"> </span>Contraseña:</h3>\n");
+      out.write("                        <p><input type=\"password\" name=\"txtContrasena\" required/></p>\n");
+      out.write("                    </div><br>\n");
+      out.write("                    <div class=\"feature-grid\" style=\"align-items: center; justify-content: center; display: flex\">\n");
+      out.write("                        <div class=\"button\"><span><a href=\"#\">Iniciar Sesion</a></span></div>\n");
+      out.write("                    </div>\n");
+      out.write("                </form>\n");
       out.write("\n");
       out.write("                <div class=\"clearfix\"> </div>\n");
       out.write("            </div>\n");

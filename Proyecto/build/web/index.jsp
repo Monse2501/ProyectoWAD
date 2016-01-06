@@ -81,19 +81,20 @@
     
     <div class="Themes">
         <div class="container">
-            <div class="feature-grids">
-                <div class="col-md-4 feature-grid">
-                    <h3><span class="fea-icon1"> </span>Correo:</h3>
-                    <p><input type="text" name="txtCorreo" required/></p>
-                </div>
-                <div class="col-md-4 feature-grid">
-                    <h3><span class="fea-icon1"> </span>Contraseña:</h3>
-                    <p><input type="password" name="txtContrasena" required/></p>
-                </div>
-
-                <div class="col-md-4 feature-grid">
-                    <div class="button"><span><a href="#">Read More</a></span></div>
-                </div>
+            <div class="feature-grids" style="align-items: center; justify-content: center; display: flex">
+                <form method="post" action="InicioSesionServlet">
+                    <div class="feature-grid">
+                        <h3><span class="fea-icon1"> </span>Correo:</h3>
+                        <p><input type="text" name="txtCorreo" required/></p>
+                    </div><br>
+                    <div class="feature-grid">
+                        <h3><span class="fea-icon1"> </span>Contraseña:</h3>
+                        <p><input type="password" name="txtContrasena" required/></p>
+                    </div><br>
+                    <div class="feature-grid" style="align-items: center; justify-content: center; display: flex">
+                        <div class="button"><span><a href="#">Iniciar Sesion</a></span></div>
+                    </div>
+                </form>
 
                 <div class="clearfix"> </div>
             </div>

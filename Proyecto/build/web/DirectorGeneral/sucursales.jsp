@@ -4,16 +4,18 @@
     Author     : Max
 --%>
 
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Principal</title>
+        <title>Sucursales</title>
         <link href="../css/bootstrap.css" rel='stylesheet' type='text/css' />
         <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
         <script src="../js/jquery.min.js"></script>
         <!-- Custom Theme files -->
         <link href="../css/style.css" rel='stylesheet' type='text/css' />
+        <link href="../css/EstiloTabla.css" rel='stylesheet' type='text/css' />
         <!-- Custom Theme files -->
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
@@ -69,14 +71,14 @@
             <div class="top-header">
                 <div class="container">
                     <div class="logo">
-                        <h1>BIENVENIDO</h1>
+                        <h1>SUCURSALES</h1>
                     </div>
                     <!----start-top-nav---->
                     <nav class="top-nav">
                         <ul class="top-nav">
                             <li class="active"><a href="#home" class="scroll">Inicio</a></li>
-                            <li><a href="DirectorServlet.jsp?accion=sucursales">Sucursales</a></li>
-                            <li><a href="#services">Managers</a></li>
+                            <li><a href="sucursales.jsp">Sucursales</a></li>
+                            <li><a href="managers.jsp">Managers</a></li>
                             <li><a href="#portfolio">Reportes</a></li>
                             <li><a href="#contact">Gráficas</a></li>
                             <li><a href="#contact">Configuración</a></li>
@@ -91,39 +93,69 @@
         <!----- //End-header---->
 
         <div class="Themes">
+            <div class="feature-grid" style="justify-content: center; display: flex">
+                <div class="button"><span><a href="SucursalServlet?accion=agregar">Agregar Sucursal</a></span></div>
+            </div>
             <div class="container">
                 <div class="feature-grids">
-                    <div class="col-md-4 feature-grid">
-                        <h3>Sucursales</h3>
-                        <p>
-                            Este tipo de usuario puede realizar varias operaciones, entre éstas están
-                            alta, baja, cambios y consultas sobre las sucursales con las cuales va a contar
-                            la cadena de cine, ingresando su dirección.
-                        </p>
-                    </div>
-                    
-                    <div class="col-md-4 feature-grid">
-                        <h3>Managers</h3>
-                        <p>
-                            Puede realizar las operaciones correspondientes a los managers
-                            de cada una de las sucursales para que éstos lleven la administración
-                            por separado y organicen a sus empleados y las películas que se presentarán.
-                        </p>
-                    </div>
-
-                    <div class="col-md-4 feature-grid">
-                        <h3>Administración</h3>
-                        <p>
-                            Para llevar a cabo sus tareas puede utilizar herramientas como reportes o
-                            gráficas para facilitar el manejo de información y obtener estadísticas
-                            de las sucursales o managers que administra.s
-                        </p>
+                    <div class="feature-grid">
+                        <table class="rwd-table" style="margin: 0 auto">
+                            <th>Nombre</th>
+                            <th>Calle</th>
+                            <th>Número</th>
+                            <th>Colonia</th>
+                            <th>CP</th>
+                            <th>Delegación<br>Municipio</th>
+                            <th>Entidad<br>Federativa</th>
+                            <th>Acción</th>
+                            
+                            <c:forEach var="sucursales" items="${listaDeSucursales}">
+                            <tr>
+                                <td><c:out value="${sucursales.nombreSucursal}" /></td>
+                                <td><c:out value="${sucursales.calle}"/></td>
+                                <td><c:out value="${sucursales.numero}"/></td>
+                                <td><c:out value="${sucursales.colonia}"/></td>
+                                <td><c:out value="${sucursales.codigoPostal}"/></td>
+                                <td><c:out value="${sucursales.delegacionmunicipio}"/></td>
+                                <td><c:out value="${sucursales.entidadfederativa}"/></td>
+                                <td>
+                                    <a href="SucursalServlet?accion=eliminar&id=${carreras.idCarrera}"><img src='../images/eliminar.jpg'></a>
+                                    <a href="SucursalServlet?accion=actualizar&id=${carreras.idCarrera}"><img src='../images/editar.jpg'></a>
+                                </td>
+                            </tr>
+                            </c:forEach>                            
+                        </table><br><br>
                     </div>
                     <div class="clearfix"> </div>
                 </div>
                 <div class="clearfix"> </div>
             </div>
             <div class="clearfix"> </div>
+        </div>
+        <div class="services" id="services">
+            <div class="container">
+                <div class="h-part">
+                    <h3 class="m_5">MAPA</h3>
+                    <p>Consulte cualquier sucursal por medio de este mapa.</p>
+                </div>
+                <div id="map" style="margin: 0 auto; align-items: center; justify-content: center; display: flex">
+
+                </div>
+                <script src="https://maps.googleapis.com/maps/api/js"></script>
+                <script>
+                  function initialize() {
+                    var mapCanvas = document.getElementById('map');
+                    var mapOptions = {
+                      center: new google.maps.LatLng(19.6261735, -99.10009529999999),
+                      zoom: 8,
+                      mapTypeId: google.maps.MapTypeId.ROADMAP
+                    }
+                    var map = new google.maps.Map(mapCanvas, mapOptions)
+                  }
+                  google.maps.event.addDomListener(window, 'load', initialize);
+                </script>
+                <div class="clear"></div>
+            </div>
         </div>
         <!---//End-da-features----->	
         <!--- portfolio ---->

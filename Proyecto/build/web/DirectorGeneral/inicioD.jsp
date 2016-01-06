@@ -75,7 +75,7 @@
                     <nav class="top-nav">
                         <ul class="top-nav">
                             <li class="active"><a href="#home" class="scroll">Inicio</a></li>
-                            <li><a href="sucursales.jsp">Sucursales</a></li>
+                            <li><a href="DirectorServlet.jsp?accion=sucursales">Sucursales</a></li>
                             <li><a href="#services">Managers</a></li>
                             <li><a href="#portfolio">Reportes</a></li>
                             <li><a href="#contact">Gráficas</a></li>

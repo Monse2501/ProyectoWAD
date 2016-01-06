@@ -20,6 +20,11 @@ body a{
 .header{
 	background: #F7F8F8;
 }
+#map {
+    width: 800px;
+    height: 400px;
+}
+
 .logo{
 	float: left;
 	margin-top: 0.2em;
